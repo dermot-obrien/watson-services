@@ -1,0 +1,284 @@
+# This is the Watson Services API
+swagger: '2.0'
+info:
+  title: Watson Services API
+  description: Watson services.
+  version: "1.0.0.rc-01"
+# The domain of the service
+# host: 
+# The array of all schemes that the API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /v1
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+
+  /user/login:
+  
+    post:
+      summary: Login a user and add the user if new.
+      description: Login a user and additionally add a new user if the user is new. Requires information obtained via a successful Facebook login. Refresh the Facebook user access token if the user already exists. The returned CapApp user access token will be used for authentication on other API calls. 
+      tags:
+        - User
+      operationId: loginUser
+      parameters:
+        - in: query
+          name: name
+          description: The user name.
+          required: true
+          type: string
+        - in: query
+          name: tag
+          description: An optional tag attached to any data created. Typically used for testing.
+          required: false
+          type: string
+      responses:
+        200:
+          description: The userToken and a small subset of user information. The userToken may be added to the header of other API calls that require a user token.
+          schema:
+            $ref: '#/definitions/User'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'    
+      security:
+        - tp_auth:
+          - tpapp
+          
+  /user/me:
+    get:
+      operationId: getUser
+      summary: User profile
+      description: The user profile endpoint returns information about the user that has authorized with the application.
+      tags:
+        - User
+      responses:
+        200:
+          description: Profile information for a user
+          schema:
+            $ref: '#/definitions/User'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+        - tp_auth:
+          - user
+
+securityDefinitions:
+
+  tp_auth:
+    type: oauth2
+    description: Obtain an initial scoped access token from the organisation. That can be used for non-user specific actions. For user specific actions, obtain a user scoped access token using the /users/login API call and the scoped access token.
+    authorizationUrl: Not used
+    flow: implicit
+    scopes:
+      tpapp: Perform actions on behalf of the organization.
+      user: Perform actions on behalf of an individual user.
+    
+definitions:
+
+  Users:
+    type: object
+    properties:
+      data:
+        type: array
+        description: An array of users.
+        items:
+          $ref: '#/definitions/User'
+      paging:
+          $ref: '#/definitions/Paging'
+      
+  User:
+    description: A user.
+    allOf:
+      - $ref: '#/definitions/HasLongId'
+      - type: object
+        properties:
+          accessToken:
+            type: string
+            description: The person's Facebook access token.
+          name:
+            type: string
+            description: The person's full name.
+          userToken:
+            type: string
+            description: A user access token used for authentication on other calls.
+          firstName:
+            type: string
+            description: The person's first name.
+          lastName:
+            type: string
+            description: The person's last name.
+          email:
+            type: string
+            description: Email address of the CapApp user
+          picture:
+            type: string
+            description: Image URL of the CapApp user.
+        
+  HasLongId:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: A unique ID for the item.
+      tag:
+        type: string
+        description: An optional tag attached to the item when it was created.
+    required:
+      - id
+      
+  DiscoveryCollection:
+    type: object
+    properties:
+      name:
+        type: string
+        description: The name of the collection.
+      environment_id:
+        type: string
+        description: The unique identifier for this environment.
+      collection_id:
+        type: string
+        description: The unique identifier for this collection.
+      username:
+        type: string
+        description: The username used to access the collection.
+      password:
+        type: string
+        description: The password used to access the collection.
+      configuration_id:
+        type: string
+        description: The unique identifier of the configuration.
+      language:
+        type: string
+        description: The language of the documents stored in the collection. Possible values are English (en), German (de), Spanish (es), Arabic (ar), French (fr), Italian (it), Japanese (ja), Korean (ko), or Brazilian Portuguese (pt-br).
+      status:
+        type: string
+        description: The current status of the collection.
+      description:
+        type: string
+        description: The description of the collection.
+      created:
+        type: string
+        description: The creation date of the collection, in the format yyyy-MM-dd'T'HH:mm:ss.SSS'Z'.
+      updated:
+        type: string
+        description: The timestamp of the most recent update to the collection, in the format yyyy-MM-dd'T'HH:mm:ss.SSS'Z'.
+      document_counts:
+          $ref: '#/definitions/DocumentCounts'
+          description: Object providing information about the documents in the collection.
+      disk_usage:
+          $ref: '#/definitions/DiskUsage'
+          description: Object providing information about the amount of space used by the collection.
+      training_status:
+          $ref: '#/definitions/TrainingStatus'
+          description: Object providing information about the amount of space used by the collection.
+      used_bytes:
+        type: integer
+        description: The total number of bytes of storage used by this collection.
+      training:
+          $ref: '#/definitions/Training'
+          description: Object providing information about the training data available for the collection.
+
+  DocumentCounts:
+    description: Object providing information about the documents in the collection.
+    type: object
+    properties:
+      available:
+        type: number
+        description: The total number of available documents in the collection.
+      processing:
+        type: number
+        description: The number of documents in the collection that are currently being processed.
+      failed:
+        type: integer
+        description: The number of documents in the collection that failed to be ingested.
+
+  DiskUsage:
+    description: Object providing information about the amount of space used by the collection.
+    type: object
+    properties:
+      used_bytes:
+        type: integer
+        format: int64
+      maximum_allowed_bytes:
+        type: integer
+        format: int64
+
+  TrainingStatus:       
+    description: Object providing information about the collection training status.
+    type: object
+    properties:
+      total_examples: 
+        type: integer
+        format: int64
+      available: 
+        type: boolean
+      processing: 
+        type: boolean
+      minimum_queries_added: 
+        type: boolean
+      minimum_examples_added: 
+        type: boolean
+      sufficient_label_diversity: 
+        type: boolean
+      notices: 
+        type: integer
+        format: int64
+      successfully_trained: 
+        type: string
+        format: date-time
+      data_updated: 
+        type: string
+        format: date-time
+ 
+  Training:
+    description: Object providing information about the training data available for the collection.
+    type: object
+    properties:
+      documentId:
+        type: string
+        description: The unique identifier of the ingested document.
+
+  Document:
+    type: object
+    properties:
+      documentId:
+        type: string
+        description: The unique identifier of the ingested document.
+      title:
+        type: string
+        description: The document title.
+      fileType:
+        type: string
+        description: The document file type.
+      filename:
+        type: string
+        description: The document filename.
+      author:
+        type: string
+        description: The document author.
+      
+  Paging:
+    type: object
+    properties:
+      next: 
+        type: string
+        description: This is the cursor that points to the next page of data after the page that has been returned.
+
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
