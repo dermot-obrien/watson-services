@@ -51,6 +51,6 @@ public class ConfigurationTest {
 		assertTrue(configuration.getDiscoveryCollections().size() > 0);
 		assertEquals(1,configuration.getDiscoveryCollections().size());
 		DiscoveryCollection discoveryCollection = configuration.getDiscoveryCollections().get(0);
-		assertEquals("tests-1",discoveryCollection.getName());
+		assertEquals("Airbnb Reviews",discoveryCollection.getName());
 	}
 }

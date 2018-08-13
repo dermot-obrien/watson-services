@@ -40,7 +40,7 @@ dependencies {
     compile 'com.brsanthu:migbase64:2.2'
     
     // Watson APIs and dependencies.
-    compile 'com.ibm.watson.developer_cloud:java-sdk:6.2.0'  
+    compile 'com.ibm.watson.developer_cloud:java-sdk:6.3.1'  
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
     compile 'com.squareup.okhttp3:okhttp-urlconnection:3.10.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.10.0'
