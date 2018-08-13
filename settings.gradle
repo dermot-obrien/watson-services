@@ -1,0 +1,3 @@
+rootProject.name = 'watson-services'
+enableFeaturePreview('STABLE_PUBLISHING')
+
