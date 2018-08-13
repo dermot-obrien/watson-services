@@ -4,3 +4,7 @@
 .classpath
 .project
 .settings/
+src/gen/
+.swagger-codegen/
+src/main/resources/configuration.json
+src/test/resources/test-configuration.json
