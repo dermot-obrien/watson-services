@@ -16,7 +16,7 @@ import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-08-13T16:54:53.643+12:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-09-01T15:02:02.417+12:00")
 public class UserApiServiceImpl extends UserApiService {
     @Override
     public Response getUser(SecurityContext securityContext) throws NotFoundException {
