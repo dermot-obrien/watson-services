@@ -1,0 +1,147 @@
+{
+  "matching_results": 933,
+  "passages": [
+    {
+      "document_id": "ed3c941d-2685-4c5c-a488-cf5a1e02fe66",
+      "passage_score": 28.449956469805436,
+      "passage_text": "/D.C. converters may only be used to replace the 24 V battery in stationshaving a duplicated 125 V supply and which use battery chargers with low ripple current.(That is, the chargers must comply with the specification in TP.DP 10.07, Appendix B,\"Battery",
+      "start_offset": 9141,
+      "end_offset": 9395,
+      "field": "text"
+    },
+    {
+      "document_id": "3f45c059-2305-4404-b410-1bed9cb91b5c",
+      "passage_score": 28.046590716313254,
+      "passage_text": "battery charger; power supply; STRATEGY; protection; emergency lighting; battery fuse boxes; dc primary panel; dc supply; battery banks; battery monitors; asset management; battery rectifiers; dc distribution panel; battery",
+      "start_offset": 0,
+      "end_offset": 223,
+      "field": "keywords"
+    },
+    {
+      "document_id": "200a1256-bc8e-4eeb-bb21-6d1804dd929f",
+      "passage_score": 28.045426251365612,
+      "passage_text": "battery, battery charger, dc distribution panel, dc primary panel, system design, 125 V d.c., 125 V, d.c.",
+      "start_offset": 0,
+      "end_offset": 105,
+      "field": "keywords"
+    },
+    {
+      "document_id": "ab58f918-3e7d-40bb-b065-fc6d6ef09a31",
+      "passage_score": 28.045426251365612,
+      "passage_text": "battery, battery charger, dc distribution panel, dc primary panel, system design, 125 V d.c., 125 V, d.c.",
+      "start_offset": 0,
+      "end_offset": 105,
+      "field": "keywords"
+    },
+    {
+      "document_id": "ed3c941d-2685-4c5c-a488-cf5a1e02fe66",
+      "passage_score": 27.74026547018294,
+      "passage_text": "battery, battery charger, commissioning, design load current, dc system, installation, power supply, reserve period",
+      "start_offset": 0,
+      "end_offset": 115,
+      "field": "keywords"
+    },
+    {
+      "document_id": "5d5f296a-6a9d-45eb-9bb3-6ddc10d46d72",
+      "passage_score": 26.448935857340864,
+      "passage_text": "battery, battery charger, commissioning, d.c. system, dropping diodes, installation, modular power supply, power supply, rectifier, valve regulated lead acid",
+      "start_offset": 0,
+      "end_offset": 157,
+      "field": "keywords"
+    },
+    {
+      "document_id": "e75f477e-a579-443c-8e2a-b4fad09856e0",
+      "passage_score": 26.238058265163687,
+      "passage_text": "charger DC output AC ripple to be within charger and battery manufacturer's specifications.       10.3 Alarms (e.g. charger fail, over/ under voltage etc.) operate correctly and the function of local",
+      "start_offset": 9999,
+      "end_offset": 10198,
+      "field": "text"
+    },
+    {
+      "document_id": "200a1256-bc8e-4eeb-bb21-6d1804dd929f",
+      "passage_score": 25.316673946066956,
+      "passage_text": "monitoring, removes requirements for automatic battery testing and amends the battery charger specification accordingly. Issue 4 covers makes minor amendments to Protection 2 and BZ protection supplies",
+      "start_offset": 2391,
+      "end_offset": 2592,
+      "field": "text"
+    },
+    {
+      "document_id": "ab58f918-3e7d-40bb-b065-fc6d6ef09a31",
+      "passage_score": 24.922466792040623,
+      "passage_text": ", removes requirements for automatic battery testing and amends the battery charger specification accordingly. Issue 4 covers makes minor amendments to Protection 2 and BZ protection supplies, updated",
+      "start_offset": 2394,
+      "end_offset": 2594,
+      "field": "text"
+    },
+    {
+      "document_id": "2b003688-02c8-496f-82d3-92ca786b0416",
+      "passage_score": 24.66664347352916,
+      "passage_text": "Part 1:  Cables for alternating voltages up to and including 0.6/1 kV AS 4044 Battery chargers for stationary batteries AS/NZS 3000:2007 Wiring Rules AS/NZS 3100:2002 Approval and test specification - General",
+      "start_offset": 8785,
+      "end_offset": 8993,
+      "field": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "3f45c059-2305-4404-b410-1bed9cb91b5c",
+      "result_metadata": {
+        "score": 12.776921
+      }
+    },
+    {
+      "id": "200a1256-bc8e-4eeb-bb21-6d1804dd929f",
+      "result_metadata": {
+        "score": 12.628365
+      }
+    },
+    {
+      "id": "b84f4685-9946-4b9d-ade2-d6cf9355c64c",
+      "result_metadata": {
+        "score": 11.883906
+      }
+    },
+    {
+      "id": "ab58f918-3e7d-40bb-b065-fc6d6ef09a31",
+      "result_metadata": {
+        "score": 11.836709
+      }
+    },
+    {
+      "id": "6156ffd1-8189-449c-a20f-58dabec4f2d5",
+      "result_metadata": {
+        "score": 11.640007
+      }
+    },
+    {
+      "id": "a4cf12cd-8358-4acd-abc2-0e64b2f83d45",
+      "result_metadata": {
+        "score": 11.505831
+      }
+    },
+    {
+      "id": "0fd67af4-2288-4c90-affd-82f63f566368",
+      "result_metadata": {
+        "score": 11.3888855
+      }
+    },
+    {
+      "id": "2b003688-02c8-496f-82d3-92ca786b0416",
+      "result_metadata": {
+        "score": 11.385271
+      }
+    },
+    {
+      "id": "6789d07b-214d-465e-be39-6e4446837169",
+      "result_metadata": {
+        "score": 11.319205
+      }
+    },
+    {
+      "id": "b7985bff-d27a-49d7-9127-792cdb50c5c4",
+      "result_metadata": {
+        "score": 11.314556
+      }
+    }
+  ]
+}
